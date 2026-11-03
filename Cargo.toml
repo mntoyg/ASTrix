@@ -1,0 +1,61 @@
+[package]
+name = "astrix"
+description = "ASTrix — autonomous CVE remediation and AST refactoring engine with a zero-breakage policy."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+keywords = ["security", "cve", "ast", "refactoring", "tree-sitter"]
+categories = ["development-tools", "development-tools::testing"]
+
+[workspace]
+members = ["crates/*"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.82"
+license = "MIT"
+repository = "https://github.com/mntoyg/ASTrix"
+authors = ["OmniBase Official"]
+
+[workspace.dependencies]
+astrix-core = { version = "0.1.0", path = "crates/astrix-core" }
+astrix-parser = { version = "0.1.0", path = "crates/astrix-parser" }
+astrix-rules = { version = "0.1.0", path = "crates/astrix-rules" }
+astrix-rewriter = { version = "0.1.0", path = "crates/astrix-rewriter" }
+astrix-sandbox = { version = "0.1.0", path = "crates/astrix-sandbox" }
+
+[dependencies]
+astrix-core = { workspace = true }
+astrix-parser = { workspace = true }
+astrix-rewriter = { workspace = true }
+astrix-rules = { workspace = true }
+astrix-sandbox = { workspace = true }
+
+[workspace.lints.rust]
+missing_docs = "warn"
+unsafe_code = "deny"
+unreachable_pub = "warn"
+
+[workspace.lints.clippy]
+all = { level = "warn", priority = -1 }
+pedantic = { level = "warn", priority = -1 }
+module_name_repetitions = "allow"
+missing_errors_doc = "allow"
+must_use_candidate = "allow"
+# Prose in these docs names ASTrix, CVEs and tools; backticking them hurts more
+# than it helps.
+doc_markdown = "allow"
+# Builder-style constructors are pervasive here and chaining them is the
+# intended use, not a mistake worth a lint.
+return_self_not_must_use = "allow"
+
+[lints]
+workspace = true
+
+[dev-dependencies]
+serde = { version = "1.0.229", features = ["derive"] }
+toml = "1.0.7"

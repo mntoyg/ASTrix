@@ -1,0 +1,10 @@
+# Keep LF in the working tree on every platform.
+#
+# rustfmt.toml sets newline_style = "Unix", so a CRLF checkout would fail
+# `cargo fmt --check` on Windows. Fixture files are compared byte for byte
+# against engine output, which is always LF.
+* text=auto eol=lf
+
+*.png binary
+*.jpg binary
+*.ico binary

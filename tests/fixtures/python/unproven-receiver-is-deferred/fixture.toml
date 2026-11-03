@@ -1,0 +1,14 @@
+name = "a load() on an unproven receiver is reported, not rewritten"
+language = "python"
+status = "implemented"
+rule = "astrix.python.unsafe-yaml-load"
+cves = ["CVE-2017-18342"]
+severity = "critical"
+expected_findings = 1
+expected_confidence = "tentative"
+expect_patch = false
+notes = """
+No import binds this receiver, so it may be any object with a load() method.
+The finding is reported for review and the buffer is left untouched: an
+uncertain match must never become an unattended rewrite.
+"""

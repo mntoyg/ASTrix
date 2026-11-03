@@ -1,0 +1,15 @@
+[package]
+name = "astrix-core"
+description = "Language-agnostic trait contracts and value types for the ASTrix remediation engine."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+
+[dependencies]
+thiserror = "2.0.21"
+
+[lints]
+workspace = true

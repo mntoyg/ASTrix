@@ -1,0 +1,15 @@
+name = "hashlib.md5 used as an integrity digest"
+language = "python"
+status = "pending"
+rule = "astrix.python.weak-hash-md5"
+cves = ["CVE-2004-2761"]
+cwes = ["CWE-327"]
+severity = "medium"
+expected_findings = 1
+expected_confidence = "certain"
+expect_patch = true
+notes = """
+Red test. Needs a rule that distinguishes an integrity digest from a
+non-security use such as a cache key, and that preserves an existing
+usedforsecurity keyword argument.
+"""

@@ -1,0 +1,16 @@
+[package]
+name = "astrix-rewriter"
+description = "Deterministic source-span rewriting engine for ASTrix edit scripts."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+
+[dependencies]
+astrix-core = { version = "0.1.0", path = "../astrix-core" }
+sha2 = "0.10.9"
+
+[lints]
+workspace = true

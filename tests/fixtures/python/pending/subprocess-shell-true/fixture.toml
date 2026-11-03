@@ -1,0 +1,15 @@
+name = "subprocess call with shell=True"
+language = "python"
+status = "pending"
+rule = "astrix.python.subprocess-shell-true"
+cves = []
+cwes = ["CWE-78"]
+severity = "high"
+expected_findings = 1
+expected_confidence = "certain"
+expect_patch = true
+notes = """
+Red test. Rewriting a string command into an argument vector is only sound
+when the command is a literal with no shell metacharacters; anything else must
+be deferred for review.
+"""

@@ -1,0 +1,10 @@
+name = "already-safe YAML calls are not findings"
+language = "python"
+status = "implemented"
+cves = []
+expected_findings = 0
+expect_patch = false
+notes = """
+The negative control for CVE-2017-18342: a rule that rewrites safe code is a
+breakage, not a remediation.
+"""

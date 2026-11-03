@@ -1,0 +1,18 @@
+[package]
+name = "astrix-rules"
+description = "CVE remediation rule registry and built-in rule implementations for ASTrix."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+
+[dependencies]
+astrix-core = { version = "0.1.0", path = "../astrix-core" }
+
+[lints]
+workspace = true
+
+[dev-dependencies]
+astrix-parser = { path = "../astrix-parser" }

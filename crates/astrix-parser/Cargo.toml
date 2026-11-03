@@ -1,0 +1,23 @@
+[package]
+name = "astrix-parser"
+description = "Tree-sitter backed syntax backends that expose ASTrix core AST abstractions."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+
+[dependencies]
+astrix-core = { version = "0.1.0", path = "../astrix-core" }
+tree-sitter = "0.26.13"
+tree-sitter-javascript = { version = "0.25.0", optional = true }
+tree-sitter-python = { version = "0.25.0", optional = true }
+
+[lints]
+workspace = true
+
+[features]
+default = ["lang-python", "lang-javascript"]
+lang-python = ["dep:tree-sitter-python"]
+lang-javascript = ["dep:tree-sitter-javascript"]

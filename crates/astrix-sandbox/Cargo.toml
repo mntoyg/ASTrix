@@ -1,0 +1,15 @@
+[package]
+name = "astrix-sandbox"
+description = "Zero-breakage verification sandbox contracts for ASTrix candidate patches."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+authors.workspace = true
+
+[dependencies]
+astrix-core = { version = "0.1.0", path = "../astrix-core" }
+
+[lints]
+workspace = true

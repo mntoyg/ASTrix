@@ -1,0 +1,14 @@
+name = "eval used to parse JSON"
+language = "javascript"
+status = "pending"
+rule = "astrix.javascript.eval-of-json"
+cves = []
+cwes = ["CWE-95"]
+severity = "high"
+expected_findings = 1
+expected_confidence = "certain"
+expect_patch = true
+notes = """
+Red test, and the first fixture for a second language. It exists now so the
+harness proves itself language-agnostic before any JavaScript rule is written.
+"""
